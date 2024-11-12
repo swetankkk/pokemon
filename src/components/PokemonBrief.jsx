@@ -32,10 +32,10 @@ function PokemonBrief({ pokemons }) {
 	const [hoveredPokemon, setHoveredPokemon] = React.useState(null);
 
 	return (
-		<div className='flex flex-col'>
-			<div className='flex self-end mr-2'>
+		<div className='flex flex-col ml-2'>
+			<div className='flex self-end '>
 				<Pagination>
-					<PaginationContent>
+					<PaginationContent className='flex flex-wrap'>
 						{typeof pagination === 'number' &&
 							[...Array(Math.ceil(pokemons.length / pagination))].map(
 								(_, index) => (
@@ -50,13 +50,15 @@ function PokemonBrief({ pokemons }) {
 					</PaginationContent>
 				</Pagination>
 
-				<Select className='' onValueChange={handleSelectChange}>
-					<SelectTrigger className='w-[180px]'>
+				<Select className='w-8' onValueChange={handleSelectChange}>
+					<SelectTrigger className='w-28'>
 						<SelectValue placeholder='Select' />
 					</SelectTrigger>
-					<SelectContent>
+					<SelectContent className=''>
 						<SelectItem value='50'>50</SelectItem>
-						<SelectItem value='100'>100</SelectItem>
+						<SelectItem value='100' className='w-8'>
+							100
+						</SelectItem>
 						<SelectItem value='200'>200</SelectItem>
 						<SelectItem value='500'>500</SelectItem>
 						<SelectItem value='all'>All</SelectItem>

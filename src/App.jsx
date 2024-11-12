@@ -33,7 +33,7 @@ const AppContent = () => {
 					onClick={() => {
 						setShowFav(!showFav);
 					}}
-					className=' self-end my-2 mx-2'
+					className=' self-end my-2 mx-2 w-24'
 				>
 					ShowFav
 				</Button>
